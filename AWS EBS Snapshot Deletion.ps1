@@ -15,8 +15,8 @@
 #> 
 
 #Required Modules
-Import-Module AWS.Tools.Common
-Import-Module AWS.Tools.EC2
+Import-Module AWS.Tools.Common -ErrorAction Stop
+Import-Module AWS.Tools.EC2 -ErrorAction Stop
 
 #Params
 $Output = 'output.txt'
