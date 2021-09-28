@@ -36,6 +36,6 @@ If ($snapshots -eq $null){
     } Else {
         Write-Output "Deleting $Tag backups" >> $Output
         Write-Output $snapshots >> $Output
-        Get-EC2Snapshot | ? { $_.Tags.Key -eq "Name" -and $_.Tags.Value - $Tag } | ? { $_.StartTime -le ((get-date).AddMonths(-1)) } | Remove-EC2Snapshot -Confirm:$false
+        Get-EC2Snapshot -SnapshotId $snapshots.SnapshotId | Remove-EC2Snapshot -Confirm:$false
     }
 }
